@@ -1,0 +1,17 @@
+---
+import { profile } from '../data/site.js';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo">ADITYA<span class="dot">.</span>DEV</div>
+    <p>© {year} Designed &amp; built by {profile.name}</p>
+    <div class="footer-links">
+      <a href={profile.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href={profile.linkedin} rel="noopener">LinkedIn</a>
+      <a href={`mailto:${profile.email}`}>Email</a>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,31 @@
+---
+import { profile } from '../data/site.js';
+---
+
+<header class="hero" id="hero">
+  <div id="heroParallax">
+    <div class="hero-badge">
+      <span>Full Stack Developer</span>
+    </div>
+    <h1 class="hero-heading">
+      <span class="reveal-text"><span class="hero-heading-word">Building</span></span>
+      <span class="reveal-text"><span class="hero-heading-word">Digital</span></span>
+      <span class="reveal-text"><span class="hero-heading-word accent">Experiences</span></span>
+    </h1>
+    <p class="hero-paragraph">
+      I'm <strong>{profile.name}</strong> — crafting responsive, scalable and SEO-optimized
+      web applications end-to-end. Currently building real estate platforms at
+      <strong>{profile.company}</strong>, Bengaluru.
+    </p>
+    <div class="hero-actions">
+      <a href="#projects" class="btn btn-primary magnetic">View Work</a>
+      <a href={profile.resume} download="Aditya-Gupta-Resume.pdf" class="btn btn-ghost magnetic">
+        Download Resume <span class="arrow">↓</span>
+      </a>
+    </div>
+  </div>
+  <div class="hero-scroll" aria-hidden="true">
+    <span>Scroll</span>
+    <div class="line"></div>
+  </div>
+</header>

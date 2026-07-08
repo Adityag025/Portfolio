@@ -1,0 +1,33 @@
+---
+import { stats } from '../data/site.js';
+---
+
+<section class="section" id="about">
+  <div class="section-label reveal">01 / About</div>
+  <h2 class="section-heading reveal">Precision &amp; Purpose</h2>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <p>
+        I'm a Full Stack Developer proficient in <strong>React.js, JavaScript, jQuery, PHP and MySQL</strong>,
+        with hands-on expertise in RESTful APIs, Zoho CRM integration, and mobile-first,
+        performance-driven UI design.
+      </p>
+      <p>
+        I'm actively involved in discovery and feasibility discussions for new product features,
+        collaborating closely with design and backend teams within Agile workflows. I'm committed
+        to writing clean, maintainable code and delivering seamless cross-browser experiences.
+      </p>
+      <p>
+        🏆 Recipient of the <strong>2025 "Rising Star" Award</strong> at ODigMa Consultancy Solutions.
+      </p>
+    </div>
+    <div class="about-stats">
+      {stats.map((stat) => (
+        <div class="stat-card glass-card reveal">
+          <span class="stat-num" data-count={stat.count}>0</span><span class="stat-suffix">{stat.suffix}</span>
+          <p>{stat.label}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

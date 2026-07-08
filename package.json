@@ -1,0 +1,14 @@
+{
+  "name": "aditya-portfolio",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "animejs": "^3.2.2",
+    "astro": "^5.0.0"
+  }
+}

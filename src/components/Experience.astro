@@ -1,0 +1,25 @@
+---
+import { timeline } from '../data/site.js';
+---
+
+<section class="section" id="experience">
+  <div class="section-label reveal">03 / Experience</div>
+  <h2 class="section-heading reveal">The Journey So Far</h2>
+  <div class="timeline">
+    {timeline.map((item) => (
+      <div class="timeline-item reveal">
+        <div class="timeline-marker"></div>
+        <div class="timeline-card glass-card">
+          <span class="timeline-date">{item.date}</span>
+          <h3>{item.title}</h3>
+          <h4>{item.subtitle}</h4>
+          {item.points.length > 0 && (
+            <ul>
+              {item.points.map((point) => <li>{point}</li>)}
+            </ul>
+          )}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
