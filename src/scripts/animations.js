@@ -43,6 +43,7 @@ function playIntro() {
       targets: '.hero-badge',
       opacity: [0, 1],
       translateY: [20, 0],
+      delay: anime.stagger(130),
       duration: 900
     }, '-=550')
     // Words rise out of clip-path masks, staggered
@@ -229,10 +230,10 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
 
-/* Project cards: icon squash-stretch wiggle + tag ripple on hover
-   (lift/shadow/dim handled by .glass-card CSS per the design) */
-document.querySelectorAll('.project-card').forEach((card) => {
-  const icon = card.querySelector('.project-icon');
+/* Project & service cards: icon squash-stretch wiggle + tag ripple
+   on hover (lift/shadow/dim handled by .glass-card CSS) */
+document.querySelectorAll('.project-card, .service-card').forEach((card) => {
+  const icon = card.querySelector('.project-icon, .service-icon');
   const tags = card.querySelectorAll('.tags span');
 
   card.addEventListener('mouseenter', () => {
@@ -304,6 +305,69 @@ document.querySelectorAll('.magnetic').forEach((btn) => {
     anime({ targets: btn, scale: 1, duration: 600, easing: 'easeOutElastic(1, 0.4)' });
   });
 });
+
+/* ============================================================
+   5. BACK TO TOP — appears after scrolling, elastic entrance
+   ============================================================ */
+const backToTop = document.getElementById('backToTop');
+
+if (backToTop) {
+  let shown = false;
+  window.addEventListener('scroll', () => {
+    const shouldShow = window.scrollY > 600;
+    if (shouldShow === shown) return;
+    shown = shouldShow;
+    backToTop.classList.toggle('visible', shown);
+    if (reduceMotion) {
+      backToTop.style.opacity = shown ? 1 : 0;
+      return;
+    }
+    anime.remove(backToTop);
+    anime({
+      targets: backToTop,
+      opacity: shown ? [0, 1] : [1, 0],
+      scale: shown ? [0.6, 1] : [1, 0.6],
+      duration: 550,
+      easing: shown ? 'easeOutElastic(1, 0.5)' : 'easeOutQuad'
+    });
+  }, { passive: true });
+
+  backToTop.addEventListener('click', () => {
+    if (reduceMotion) {
+      window.scrollTo(0, 0);
+      return;
+    }
+    const scroll = { y: window.scrollY };
+    anime({
+      targets: scroll,
+      y: 0,
+      duration: 900,
+      easing: 'easeInOutQuint',
+      update: () => window.scrollTo(0, scroll.y)
+    });
+  });
+}
+
+/* ============================================================
+   6. NAV SCROLLSPY — highlight the section in view
+   ============================================================ */
+const navLinks = [...document.querySelectorAll('.nav-links a:not(.nav-cta)')];
+const spyTargets = navLinks
+  .map((link) => document.querySelector(link.getAttribute('href')))
+  .filter(Boolean);
+
+if (spyTargets.length) {
+  const spyObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      navLinks.forEach((link) =>
+        link.classList.toggle('active', link.getAttribute('href') === `#${entry.target.id}`)
+      );
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+
+  spyTargets.forEach((section) => spyObserver.observe(section));
+}
 
 /* Chips: playful pop (appeal) */
 document.querySelectorAll('.chip').forEach((chip) => {

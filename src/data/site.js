@@ -18,6 +18,52 @@ export const stats = [
   { count: 18, suffix: '%', label: 'Bounce Rate Reduced' },
 ];
 
+export const services = [
+  {
+    icon: '🧩',
+    title: 'Frontend Engineering',
+    description: 'Responsive, pixel-perfect interfaces with React.js, jQuery and Bootstrap 5 — mobile-first and consistent across every browser.',
+  },
+  {
+    icon: '⚙️',
+    title: 'Full-Stack Development',
+    description: 'End-to-end web applications with PHP, MySQL, Node.js and RESTful APIs — from data model to deployed product.',
+  },
+  {
+    icon: '🚀',
+    title: 'SEO & Performance',
+    description: 'Semantic HTML, lazy loading and Lighthouse-driven optimization — faster loads, higher rankings, lower bounce rates.',
+  },
+  {
+    icon: '🔗',
+    title: 'API & CRM Integrations',
+    description: 'Zoho CRM pipelines, Google Maps experiences and custom third-party API integrations that connect products to business workflows.',
+  },
+];
+
+export const awards = [
+  {
+    year: '2025',
+    title: '"Rising Star" Award',
+    org: 'ODigMa Consultancy Solutions',
+  },
+  {
+    year: '2023',
+    title: 'Data Analytics Certification',
+    org: 'Professional Certification',
+  },
+  {
+    year: '2021',
+    title: '2nd Prize — ECG Game',
+    org: 'Emanation Club',
+  },
+  {
+    year: '2021',
+    title: 'Gaming Competition Coordinator',
+    org: 'Emanation Club',
+  },
+];
+
 export const marqueeSkills = [
   'React.js', 'JavaScript', 'PHP', 'MySQL', 'Node.js', 'jQuery', 'Next.js', 'MongoDB',
 ];
