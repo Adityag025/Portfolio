@@ -1,0 +1,26 @@
+<section class="section" id="lab">
+  <div class="section-label reveal">07 / Lab</div>
+  <h2 class="section-heading reveal">Desert Dash</h2>
+  <p class="lab-intro reveal">
+    A tiny endless runner built with vanilla canvas — object pooling, delta-time physics
+    and a fixed state machine in ~200 lines. Press <kbd>Space</kbd> or tap to jump.
+  </p>
+  <div class="game-frame glass-card reveal" id="gameFrame">
+    <div class="game-hud">
+      <span class="game-hud-label">Desert_Dash v1.0</span>
+      <div class="game-scores">
+        <span>HI <b id="gameHiScore">0</b></span>
+        <span>SCORE <b id="gameScore">0</b></span>
+      </div>
+    </div>
+    <div class="game-stage">
+      <canvas id="gameCanvas" aria-label="Desert Dash mini game: press space or tap to jump over cacti"></canvas>
+      <div class="game-overlay" id="gameOverlay">
+        <div class="game-overlay-title" id="gameOverlayTitle">Desert Dash</div>
+        <div class="game-overlay-sub" id="gameOverlaySub">Press Space or tap to start</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="../scripts/game.js"></script>

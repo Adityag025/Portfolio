@@ -644,6 +644,80 @@ a { color: inherit; text-decoration: none; }
   border-radius: 0.25rem;
 }
 
+/* ============ Lab / mini game ============ */
+.lab-intro {
+  color: var(--muted);
+  font-size: 1.05rem;
+  max-width: 620px;
+  margin: -1rem 0 2.2rem;
+}
+.lab-intro kbd {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  font-weight: 700;
+  color: var(--primary);
+  background: var(--primary-container);
+  border: 1px solid rgba(194, 101, 42, 0.25);
+  border-radius: 0.25rem;
+  padding: 0.1rem 0.45rem;
+}
+.game-frame { overflow: hidden; }
+.game-hud {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.9rem 1.4rem;
+  border-bottom: 1px solid rgba(194, 101, 42, 0.08);
+  background: #ffffff;
+}
+.game-hud-label,
+.game-scores {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.game-scores { display: flex; gap: 1.6rem; }
+.game-scores b { color: var(--primary); font-weight: 700; }
+.game-stage { position: relative; }
+#gameCanvas {
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.game-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: rgba(253, 248, 244, 0.7);
+  backdrop-filter: blur(3px);
+  pointer-events: none;
+  text-align: center;
+  padding: 1rem;
+}
+.game-overlay.hidden { display: none; }
+.game-overlay-title {
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+.game-overlay-sub {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
 /* ============ Contact ============ */
 .contact { text-align: center; max-width: 900px; }
 .contact .section-label { text-align: center; }
