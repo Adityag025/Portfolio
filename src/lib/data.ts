@@ -168,7 +168,7 @@ export type LiveSite = {
   summary: string;
   built: string;
   url: string;
-  status: 'live' | 'staging' | 'gated';
+  status: 'live' | 'gated';
 };
 
 /** Client sites shipped at ODigMa. `id` matches the preview image in /public/sites. */
@@ -181,8 +181,6 @@ export const liveSites: LiveSite[] = [
   { id: 'vars', name: 'Vars Builders', kind: 'Corporate site', summary: 'Residential, commercial and other verticals under one brand', built: 'WordPress', url: 'https://www.varsbuilders.com/', status: 'live' },
   { id: 'elenza', name: 'Elenza', kind: 'Corporate site', summary: 'Modular kitchens, wardrobes and full home interiors', built: 'WordPress', url: 'https://elenzaindia.com/', status: 'live' },
   { id: 'serenova', name: 'Serenova', client: 'Merusri', kind: 'Landing page', summary: 'A 167-plot prairie-planned community in North Bengaluru', built: 'Custom · jQuery', url: 'https://merusriserenova.com/', status: 'live' },
-  { id: 'arbor', name: 'Codename Arbor', client: 'Puravankara', kind: 'Landing page', summary: 'Pre-launch residential project off Judicial Layout, Bengaluru', built: 'Custom · Bootstrap', url: 'https://stage.odigma.com/codename-arbor/', status: 'staging' },
-  { id: 'eden', name: 'Echoes of Eden', kind: 'Landing page', summary: 'Ultra-luxury residences, launch campaign page', built: 'Custom · Bootstrap', url: 'https://stage.odigma.com/echoes-of-eden/', status: 'staging' },
 ];
 
 export const experience = [

@@ -13,7 +13,6 @@ const OFFSET = 28;
 
 const STATUS_LABEL: Record<LiveSite['status'], string | null> = {
   live: null,
-  staging: 'Staging',
   gated: 'Invite-only',
 };
 
@@ -80,7 +79,7 @@ export function LiveSites() {
                     <a
                       href={s.url}
                       target="_blank"
-                      rel={s.status === 'live' ? 'noreferrer' : 'noreferrer nofollow'}
+                      rel="noreferrer"
                       onPointerEnter={() => setActive(s.id)}
                       onFocus={() => setActive(null)}
                       className={clsx(
