@@ -1,6 +1,6 @@
 'use client';
 
-import { ArrowDownRight, Activity } from 'lucide-react';
+import { ArrowDownRight, Activity, Download } from 'lucide-react';
 import { heroMetrics, profile } from '@/lib/data';
 import { openContact } from '@/lib/ui-store';
 import { GithubIcon, LinkedinIcon } from '@/components/ui/icons';
@@ -32,6 +32,9 @@ export function Hero() {
             </a>
             <a href="#dashboard" data-magnetic className="press inline-flex h-11 items-center gap-2 rounded-md border border-line bg-surface px-5 text-sm hover:border-ink-3">
               <Activity className="size-4 text-accent" aria-hidden="true" /> Open live dashboard
+            </a>
+            <a href={profile.resume} download="Aditya-Gupta-Resume.pdf" data-magnetic className="press inline-flex h-11 items-center gap-2 rounded-md border border-line px-5 text-sm hover:border-ink-3">
+              <Download className="size-4" aria-hidden="true" /> Download résumé
             </a>
             <button type="button" data-magnetic onClick={() => openContact()} className="press inline-flex h-11 items-center rounded-md px-4 text-sm text-ink-2 hover:text-ink">
               Get in touch

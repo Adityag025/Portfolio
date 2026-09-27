@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import clsx from 'clsx';
+import { Download } from 'lucide-react';
 import { openContact } from '@/lib/ui-store';
 import { GithubIcon, LinkedinIcon } from '@/components/ui/icons';
 import { profile } from '@/lib/data';
@@ -73,6 +74,14 @@ export function Nav() {
           </a>
           <a href={profile.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" data-magnetic className="grid size-9 place-items-center rounded-md text-ink-2 transition-colors hover:text-ink">
             <LinkedinIcon className="size-4" />
+          </a>
+          <a
+            href={profile.resume}
+            download="Aditya-Gupta-Resume.pdf"
+            data-magnetic
+            className="press ml-1 hidden h-9 items-center gap-2 rounded-md px-3 text-sm text-ink-2 hover:text-ink sm:inline-flex"
+          >
+            <Download className="size-4" aria-hidden="true" /> Résumé
           </a>
           <button
             type="button"

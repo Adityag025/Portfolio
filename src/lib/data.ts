@@ -11,7 +11,7 @@ export const profile = {
   linkedin: 'https://linkedin.com/in/devadityagupta',
   linkedinLabel: 'linkedin.com/in/devadityagupta',
   resume: '/Aditya-Gupta-Resume.pdf',
-  site: 'https://adityag025.vercel.app',
+  site: 'https://aditya-gupta-full-stack-developer.vercel.app',
 };
 
 export const heroMetrics = [

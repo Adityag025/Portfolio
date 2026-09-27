@@ -35,6 +35,7 @@ export function Contact() {
             { k: 'Phone', v: profile.phone, copyable: true },
             { k: 'GitHub', v: profile.githubLabel, href: profile.github },
             { k: 'LinkedIn', v: profile.linkedinLabel, href: profile.linkedin },
+            { k: 'Résumé', v: 'Aditya-Gupta-Resume.pdf', href: profile.resume, download: true },
           ].map((row) => (
             <div key={row.k} className="flex items-center justify-between gap-4 border-b border-line py-4 first:border-t" data-reveal>
               <dt className="font-mono text-xs text-ink-3">{row.k}</dt>
@@ -45,7 +46,13 @@ export function Contact() {
                     <Copy className="size-3.5 text-ink-3 transition-colors group-hover:text-accent" aria-hidden="true" />
                   </button>
                 ) : (
-                  <a href={row.href} target="_blank" rel="noreferrer" className="truncate font-mono text-sm text-ink hover:text-accent">{row.v}</a>
+                  <a
+                    href={row.href}
+                    {...('download' in row ? { download: row.v } : { target: '_blank', rel: 'noreferrer' })}
+                    className="truncate font-mono text-sm text-ink hover:text-accent"
+                  >
+                    {row.v}
+                  </a>
                 )}
               </dd>
             </div>

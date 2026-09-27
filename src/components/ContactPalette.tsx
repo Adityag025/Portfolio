@@ -64,7 +64,12 @@ export function ContactPalette() {
       { id: 'phone', label: 'Copy phone number', hint: profile.phone, icon: <Phone className="size-4" />, run: () => copy(profile.phone, 'Phone') },
       { id: 'github', label: 'Open GitHub', hint: profile.githubLabel, icon: <GithubIcon className="size-4" />, run: () => window.open(profile.github, '_blank', 'noopener') },
       { id: 'linkedin', label: 'Open LinkedIn', hint: profile.linkedinLabel, icon: <LinkedinIcon className="size-4" />, run: () => window.open(profile.linkedin, '_blank', 'noopener') },
-      { id: 'resume', label: 'Download résumé', hint: 'PDF', icon: <FileText className="size-4" />, run: () => window.open(profile.resume, '_blank', 'noopener') },
+      { id: 'resume', label: 'Download résumé', hint: 'PDF', icon: <FileText className="size-4" />, run: () => {
+        const a = document.createElement('a');
+        a.href = profile.resume;
+        a.download = 'Aditya-Gupta-Resume.pdf';
+        a.click();
+      } },
       { id: 'dashboard', label: 'Go to live dashboard', hint: '#dashboard', icon: <Activity className="size-4" />, run: () => setTimeout(() => scrollToHash('#dashboard'), 50) },
     ],
     [state.animate],
