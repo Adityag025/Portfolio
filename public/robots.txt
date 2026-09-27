@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://adityag025.vercel.app/sitemap-index.xml
